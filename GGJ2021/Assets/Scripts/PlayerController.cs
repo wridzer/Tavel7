@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         //sean is een pannenkoek
+        //no u
     }
 
     // Update is called once per frame
