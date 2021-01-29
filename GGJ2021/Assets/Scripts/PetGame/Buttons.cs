@@ -35,15 +35,21 @@ public class Buttons : MonoBehaviour
     {
         Debug.Log("pet");
         petScore++;
+
+        //pet anime
     }
     public void Feed()
     {
         Debug.Log("Feed");
         feedScore++;
+
+        //feed anime
     }
     public void Play()
     {
         Debug.Log("Play");
         playScore++;
+
+        //play anime
     }
 }
