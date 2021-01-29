@@ -26,7 +26,7 @@ public class EnimFollow : MonoBehaviour
         //rb.transform.LookAt(Player.transform);
 
         Vector3 dir = Player.transform.position - transform.position;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg * rotSpeed;
+        rb.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 }

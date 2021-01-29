@@ -40,14 +40,13 @@ public class MovementTwoD : MonoBehaviour
             rb.angularVelocity += -turnSpeed;
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.tag == "Enemy")
+
+        if (collision.otherCollider.tag == "Enemy")
         {
-            Debug.Log("BOTS");
             rb.AddRelativeForce(bumping);
-            collision.GetComponent<Rigidbody2D>().AddRelativeForce(bumping);
+            collision.otherCollider.GetComponent<Rigidbody2D>().AddRelativeForce(bumping);
         }
     }
 }
