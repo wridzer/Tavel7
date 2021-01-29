@@ -11,16 +11,17 @@ public class GroundCheck : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        counter++;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        
+        counter--;
     }
 
     void Update()
     {
-        
+        if (counter != 0) { OnGround = true; }
+        else { OnGround = false; }
     }
 }

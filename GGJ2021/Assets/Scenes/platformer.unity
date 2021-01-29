@@ -321,6 +321,7 @@ GameObject:
   - component: {fileID: 1088732996}
   - component: {fileID: 1088732997}
   - component: {fileID: 1088732998}
+  - component: {fileID: 1088732999}
   m_Layer: 0
   m_Name: JumpChecker
   m_TagString: Untagged
@@ -418,6 +419,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.32, y: 1.29}
   m_EdgeRadius: 0
+--- !u!114 &1088732999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088732995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e684d7a46161e45a0ea5c3977c34e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counter: 0
+  OnGround: 0
 --- !u!1 &1099533961
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,8 +532,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1099533961}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: -2.5, z: 0}
-  m_LocalScale: {x: 0.53574, y: 0.53574, z: 0.53574}
+  m_LocalPosition: {x: -7.01, y: -2.05, z: 0}
+  m_LocalScale: {x: 0.34126607, y: 0.3588038, z: 0.53574}
   m_Children:
   - {fileID: 1088732996}
   m_Father: {fileID: 0}
@@ -563,8 +578,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rb2D: {fileID: 1099533962}
+  GroundCheck: {fileID: 1088732999}
   HSpeed: 10
-  JSpeed: 100
+  JSpeed: 1000
 --- !u!1 &1313144574
 GameObject:
   m_ObjectHideFlags: 0
