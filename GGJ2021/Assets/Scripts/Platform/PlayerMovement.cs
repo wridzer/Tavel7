@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    [SerializeField]
+    int VMovement = 0;
+    [SerializeField]
+
     void Start()
     {
         
