@@ -20,6 +20,5 @@ public class PlayerMovement : MonoBehaviour
         else { Rb2D.velocity = new Vector3(0, Rb2D.velocity.y, 0); }
 
         if (GroundCheck.OnGround == true && (Input.GetKeyDown("space") || Input.GetKeyDown("w") )) { Rb2D.AddForce(new Vector3(0, JSpeed, 0));}
-
     }
 }
