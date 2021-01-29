@@ -3,14 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Terrain
-  - Enemy
-  - Deadzone
-  - Fish
-  - FishBucket
-  - FishHangel
-  - Corner
+  tags: []
   layers:
   - Default
   - TransparentFX

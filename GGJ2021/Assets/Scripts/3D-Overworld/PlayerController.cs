@@ -23,7 +23,8 @@ public class PlayerController : MonoBehaviour
     public float tiredSpeed = 2;
     public float normalSpeed = 5;
 
-
+    public float clampMin = -15;
+    public float clampMax = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -92,7 +93,7 @@ public class PlayerController : MonoBehaviour
         //Head rotation
         mouseY = (-Input.GetAxis("Mouse Y")) * rotationSpeed * Time.deltaTime;
         xRotation = xRotation + mouseY;
-        xRotation = Mathf.Clamp(xRotation, -15, 10);
+        xRotation = Mathf.Clamp(xRotation, clampMin, clampMax);
         Vector3 rotationVector = new Vector3(xRotation, 0f, 0f);
         head.transform.localRotation = Quaternion.Euler(rotationVector);
     }

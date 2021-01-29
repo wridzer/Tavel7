@@ -29,4 +29,48 @@ public class EnimCar : MonoBehaviour
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg * rotSpeed;
         rb.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Corner")
+        {
+            NextCorner();
+        }
+    }
+
+    void NextCorner()
+    {
+        if(target == corner0)
+        {
+            target = corner1;
+        }
+        if(target == corner1)
+        {
+            target = corner2;
+        }
+        if(target == corner2)
+        {
+            target = corner3;
+        }
+        if(target == corner3)
+        {
+            target = corner4;
+        }
+        if(target == corner4)
+        {
+            target = corner5;
+        }
+        if(target == corner5)
+        {
+            target = corner6;
+        }
+        if(target == corner6)
+        {
+            target = corner7;
+        }
+        if(target == corner7)
+        {
+            target = corner0;
+        }
+    }
 }
