@@ -5,18 +5,17 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    [SerializeField]
-    int VMovement = 0;
-    [SerializeField]
+    public Rigidbody2D Rb2D;
 
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    int HSpeed = 0;
+    [SerializeField]
+    int JSpeed = 0;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey("a") && !Input.GetKey("d")) { Rb2D.velocity = new Vector3(-HSpeed, Rb2D.velocity.y, 0); }
+        else if (!Input.GetKey("a") && Input.GetKey("d")) { Rb2D.velocity = new Vector3(HSpeed, Rb2D.velocity.y, 0); }
+        else { Rb2D.velocity = new Vector3(0, Rb2D.velocity.y, 0); }
     }
 }
