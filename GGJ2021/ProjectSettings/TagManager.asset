@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Terrain
   - Enemy
+  - Deadzone
+  - Fish
+  - FishBucket
+  - FishHangel
   layers:
   - Default
   - TransparentFX

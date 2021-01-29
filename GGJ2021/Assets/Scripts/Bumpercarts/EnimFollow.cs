@@ -23,10 +23,16 @@ public class EnimFollow : MonoBehaviour
     {
         playerLoc = new Vector2(Player.transform.position.x, Player.transform.position.y);
         rb.transform.position = Vector2.MoveTowards(transform.position, playerLoc, moveSpeed * Time.deltaTime);
-        //rb.transform.LookAt(Player.transform);
 
         Vector3 dir = Player.transform.position - transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg * rotSpeed;
         rb.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Deadzone")
+        {
+            Destroy(gameObject);
+        }
     }
 }

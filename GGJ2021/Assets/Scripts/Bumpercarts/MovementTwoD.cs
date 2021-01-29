@@ -9,13 +9,15 @@ public class MovementTwoD : MonoBehaviour
     public float moveSpeed = 10;
     public float turnSpeed = 5;
     public float hitPower = 10;
-    private Vector2 bumping;
+    private Vector2 bump;
+    private Vector2 bumpE;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        bumping = new Vector2(0, -hitPower);
+        bump = new Vector2(0, hitPower);
+        bumpE = new Vector2(0, hitPower * 1.5f);
     }
 
     // Update is called once per frame
@@ -42,11 +44,27 @@ public class MovementTwoD : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
-        if (collision.otherCollider.tag == "Enemy")
+        if (collision.collider.tag == "Enemy")
         {
-            rb.AddRelativeForce(bumping);
-            collision.otherCollider.GetComponent<Rigidbody2D>().AddRelativeForce(bumping);
+            rb.AddForceAtPosition(bump, collision.transform.position);
+            collision.rigidbody.AddForceAtPosition(bumpE, transform.position);
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Enemy")
+        {
+            rb.AddForceAtPosition(bump, collision.transform.position);
+            collision.rigidbody.AddForceAtPosition(bumpE, transform.position);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Deadzone")
+        {
+            Destroy(gameObject);
         }
     }
 }
