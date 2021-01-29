@@ -2773,6 +2773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 0
   min: 0
+  started: 0
 --- !u!1 &1168333313
 GameObject:
   m_ObjectHideFlags: 0
