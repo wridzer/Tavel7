@@ -23,8 +23,6 @@ public class PlayerController : MonoBehaviour
     public float tiredSpeed = 2;
     public float normalSpeed = 5;
 
-    public GameObject cutsceneCam;
-
 
 
     // Start is called before the first frame update
@@ -114,14 +112,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Cutscene")
-        {
-            Cutscene();
-        }
-    }
-
     void Die()
     {
         SceneManager.LoadScene("Main Menu");
@@ -133,10 +123,5 @@ public class PlayerController : MonoBehaviour
         {
             player.GetComponent<Rigidbody>().AddRelativeForce(jump);
         }
-    }
-
-    void Cutscene()
-    {
-        cutsceneCam.SetActive(true);
     }
 }
