@@ -599,6 +599,8 @@ MonoBehaviour:
   sprintSpeed: 6
   tiredSpeed: 1
   normalSpeed: 4
+  clampMin: -20
+  clampMax: 15
 --- !u!136 &1335086617
 CapsuleCollider:
   m_ObjectHideFlags: 0
