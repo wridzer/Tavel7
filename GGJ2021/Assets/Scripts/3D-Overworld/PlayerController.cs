@@ -104,6 +104,11 @@ public class PlayerController : MonoBehaviour
         {
             grounded = false;
         }
+        if (other.tag == "Machine")
+        {
+            other.GetComponentInParent<MachineInterface>().interText.enabled = false;
+            other.GetComponentInParent<MachineInterface>().enabled = false;
+        }
     }
     private void OnTriggerStay(Collider other)
     {
@@ -130,7 +135,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.tag == "Machine")
         {
-            //other.GetComponentInParent<script>().function();
+            other.GetComponentInParent<MachineInterface>().enabled = true;
         }
     }
 }

@@ -6,23 +6,33 @@ using UnityEngine.UI;
 
 public class MachineInterface : MonoBehaviour
 {
-    public Scene minigame;
-    public Text text;
+    public int minigame;
+    public Text outOfOrder;
+    public Text interText;
 
-    // Start is called before the first frame update
-    void Start()
+    public void Update()
     {
-        
+        if (Input.GetKey(KeyCode.E))
+        {
+            if (minigame != 0)
+            {
+                //start animation
+                SceneManager.LoadScene(minigame);
+            }
+            if (minigame == 0)
+            {
+                StartCoroutine(textGone());
+            }
+        } else
+        {
+            interText.GetComponent<Text>().enabled = true;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public IEnumerator textGone()
     {
-        if(minigame != null)
-        {
-            //start animation
-            string sceneName = minigame.name;
-            SceneManager.LoadScene(sceneName);
-        }
+        outOfOrder.GetComponent<Text>().enabled = true;
+        yield return new WaitForSeconds(1.5f);
+        outOfOrder.GetComponent<Text>().enabled = false;
     }
 }
