@@ -14,6 +14,9 @@ public class CarController : MonoBehaviour
 
     private bool onGrass;
 
+    public AudioClip hitSF, lapSF;
+    public AudioSource audioS;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +60,7 @@ public class CarController : MonoBehaviour
         if(collision.tag == "Finish")
         {
             gm.GetComponent<GameManger>().Finish();
+            audioS.PlayOneShot(lapSF);
         }
         if(collision.name == "Checkpoint")
         {
@@ -77,6 +81,13 @@ public class CarController : MonoBehaviour
         if (collision.tag == "Terrain")
         {
             onGrass = false;
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.collider.name == "Enemy")
+        {
+            audioS.PlayOneShot(hitSF);
         }
     }
 }

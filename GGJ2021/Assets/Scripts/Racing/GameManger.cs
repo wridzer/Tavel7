@@ -8,6 +8,9 @@ public class GameManger : MonoBehaviour
     [SerializeField] private int checkP1, checkP2, finishP, finishE;
     private bool enimFin, playFin = false;
 
+    public AudioClip winSF, loseSF;
+    public AudioSource audioS;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,10 +31,12 @@ public class GameManger : MonoBehaviour
         if(enimFin == true && playFin == false)
         {
             Debug.Log("Lost");
+            audioS.PlayOneShot(loseSF);
         }
         if(enimFin == false && playFin == true)
         {
             Debug.Log("Won");
+            audioS.PlayOneShot(winSF);
         }
     }
 
