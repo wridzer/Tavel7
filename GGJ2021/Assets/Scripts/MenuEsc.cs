@@ -17,17 +17,23 @@ public class MenuEsc : MonoBehaviour
         if (Input.GetKey(KeyCode.Escape))
         {
             Menu.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0;
         }
     }
 
     public void Resume()
     {
         Menu.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1;
     }
 
     public void Arcade()
     {
-        SceneManager.LoadScene("TODO"); //insert 3d world
+        SceneManager.LoadScene(1);
+        Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1;
     }
 
     public void Exit()
