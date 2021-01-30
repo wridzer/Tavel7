@@ -27,6 +27,12 @@ public class EnimCar : MonoBehaviour
         corners.Add(corner5);
         corners.Add(corner6);
         corners.Add(corner7);
+        for (int i = 0; i == 7; i++)
+        {
+            GameObject curCor = corners[i];
+            curCor.GetComponent<BoxCollider2D>().enabled = false;
+        }
+        target.GetComponent<BoxCollider2D>().enabled = true;
     }
 
     // Update is called once per frame
@@ -43,6 +49,7 @@ public class EnimCar : MonoBehaviour
     {
         if (collision.tag == "Corner")
         {
+            target.GetComponent<BoxCollider2D>().enabled = false;
             NextCorner();
         }
         if (collision.tag == "Finish")
@@ -58,5 +65,6 @@ public class EnimCar : MonoBehaviour
             cornerCount = 0;
         }
         target = corners[cornerCount];
+        target.GetComponent<BoxCollider2D>().enabled = true;
     }
 }

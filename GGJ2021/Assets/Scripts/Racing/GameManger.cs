@@ -21,7 +21,7 @@ public class GameManger : MonoBehaviour
         {
             playFin = true;
         }
-        if(finishE == 3)
+        if(finishE == 4)
         {
             enimFin = true;
         }
