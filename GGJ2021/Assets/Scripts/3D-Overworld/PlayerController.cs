@@ -125,4 +125,12 @@ public class PlayerController : MonoBehaviour
             player.GetComponent<Rigidbody>().AddRelativeForce(jump);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Machine")
+        {
+            //other.GetComponentInParent<script>().function();
+        }
+    }
 }
