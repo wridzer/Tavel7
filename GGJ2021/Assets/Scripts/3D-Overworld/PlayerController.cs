@@ -104,6 +104,11 @@ public class PlayerController : MonoBehaviour
         {
             grounded = false;
         }
+        if (other.tag == "Machine")
+        {
+            other.GetComponentInParent<MachineInterface>().interText.enabled = false;
+            other.GetComponentInParent<MachineInterface>().enabled = false;
+        }
     }
     private void OnTriggerStay(Collider other)
     {
@@ -123,6 +128,14 @@ public class PlayerController : MonoBehaviour
         if (grounded == true)
         {
             player.GetComponent<Rigidbody>().AddRelativeForce(jump);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Machine")
+        {
+            other.GetComponentInParent<MachineInterface>().enabled = true;
         }
     }
 }
