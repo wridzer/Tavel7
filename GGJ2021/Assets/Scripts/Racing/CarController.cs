@@ -12,10 +12,13 @@ public class CarController : MonoBehaviour
 
     public GameObject gm;
 
+    private bool onGrass;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        onGrass = false;
     }
 
     // Update is called once per frame
@@ -28,20 +31,24 @@ public class CarController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            Vector2 moving = new Vector2(0, moveSpeed);
+            Vector2 moving = new Vector2(0, moveSpeed * Time.deltaTime);
             rb.AddRelativeForce(moving);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            rb.angularVelocity += turnSpeed;
+            rb.angularVelocity += turnSpeed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            rb.angularVelocity += -turnSpeed;
+            rb.angularVelocity += -turnSpeed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.S))
         {
                 rb.drag = 4;
+        }
+        if (onGrass == true) 
+        {
+            rb.drag = 5;
         } else { rb.drag = 2; }
     }
 
@@ -50,6 +57,18 @@ public class CarController : MonoBehaviour
         if(collision.tag == "Finish")
         {
             gm.GetComponent<GameManger>().StartTimer();
+        }
+        if(collision.tag == "Terrain")
+        {
+            onGrass = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+
+        if (collision.tag == "Terrain")
+        {
+            onGrass = false;
         }
     }
 }
