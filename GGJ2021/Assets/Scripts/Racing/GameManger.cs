@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManger : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class GameManger : MonoBehaviour
 
     public AudioClip winSF, loseSF;
     public AudioSource audioS;
+
+    public GameObject winCheck;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +40,8 @@ public class GameManger : MonoBehaviour
         {
             Debug.Log("Won");
             audioS.PlayOneShot(winSF);
+            winCheck.GetComponent<ScoreKeep>().Race();
+            SceneManager.LoadScene(1);
         }
     }
 
