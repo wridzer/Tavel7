@@ -12,12 +12,15 @@ public class MovementTwoD : MonoBehaviour
     private Vector2 bump;
     private Vector2 bumpE;
 
+    public AudioSource audioS;
+    public AudioClip hitSF;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         bump = new Vector2(0, hitPower);
-        bumpE = new Vector2(0, hitPower * 1.5f);
+        bumpE = new Vector2(0, hitPower * 4f);
     }
 
     // Update is called once per frame
