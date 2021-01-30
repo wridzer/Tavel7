@@ -4,47 +4,62 @@ using UnityEngine;
 
 public class GameManger : MonoBehaviour
 {
-    [SerializeField] private float timer;
-    [SerializeField] private int min;
-    [SerializeField] private bool started;
-    private int fin = 0;
+    public GameObject CP, CP1;
+    [SerializeField] private int checkP1, checkP2, finishP, finishE;
+    private bool enimFin, playFin = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        started = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (fin >= 2)
+        if(finishP == 3)
         {
-            started = false;
-            if (timer >= 35)
-            {
-                Debug.Log("You Lose"); //Insert lose condition
-            }
-            if (timer < 35)
-            {
-                Debug.Log("You Win"); //Insert win condition
-            }
+            playFin = true;
         }
-        if (started == true)
+        if(finishE == 3)
         {
-            timer += Time.deltaTime;
-            if (timer >= 60)
-            {
-                timer = 0;
-                min++;
-            }
+            enimFin = true;
+        }
+        if(enimFin == true && playFin == false)
+        {
+            Debug.Log("Lost");
+        }
+        if(enimFin == false && playFin == true)
+        {
+            Debug.Log("Won");
         }
     }
 
-    public void StartTimer()
+    public void Check1()
     {
-        started = true;
-        fin++;
-        Debug.Log("FINISH!");
+        if(finishP == checkP1)
+        {
+            checkP1++;
+        }
+    }
+
+    public void Check2()
+    {
+        if (checkP1 == checkP2 + 1)
+        {
+            checkP2++;
+        }
+    }
+
+    public void Finish()
+    {
+        if (checkP2 == finishP + 1)
+        {
+            finishP++;
+        }
+    }
+    public void FinishE()
+    {
+        finishE++;
     }
 }
