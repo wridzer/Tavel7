@@ -11,6 +11,9 @@ TagManager:
   - FishBucket
   - FishHangel
   - Corner
+  - CP1
+  - CP2
+  - Machine
   layers:
   - Default
   - TransparentFX
