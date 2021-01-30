@@ -784,7 +784,7 @@ public class Dating : MonoBehaviour
         text46.enabled = false;
         text47.enabled = false;
         text48.enabled = false;
-        text49.enabled = false;
+        text49.enabled = false;/*
         text50.enabled = false;
         text51.enabled = false;
         text52.enabled = false;
@@ -821,6 +821,6 @@ public class Dating : MonoBehaviour
         text83.enabled = false;
         text84.enabled = false;
         text85.enabled = false;
-        text86.enabled = false;
+        text86.enabled = false;*/
     }
 }
