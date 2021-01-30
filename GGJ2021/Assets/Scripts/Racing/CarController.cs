@@ -56,7 +56,15 @@ public class CarController : MonoBehaviour
     {
         if(collision.tag == "Finish")
         {
-            gm.GetComponent<GameManger>().StartTimer();
+            gm.GetComponent<GameManger>().Finish();
+        }
+        if(collision.name == "Checkpoint")
+        {
+            gm.GetComponent<GameManger>().Check1();
+        }
+        if(collision.name == "Checkpoint1")
+        {
+            gm.GetComponent<GameManger>().Check2();
         }
         if(collision.tag == "Terrain")
         {

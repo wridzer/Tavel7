@@ -12,6 +12,7 @@ public class EnimCar : MonoBehaviour
     public GameObject corner0, corner1, corner2, corner3, corner4, corner5, corner6, corner7;
     List<GameObject> corners = new List<GameObject>();
     private int cornerCount;
+    public GameObject gm;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +44,10 @@ public class EnimCar : MonoBehaviour
         if (collision.tag == "Corner")
         {
             NextCorner();
+        }
+        if (collision.tag == "Finish")
+        {
+            gm.GetComponent<GameManger>().FinishE();
         }
     }
     void NextCorner()
