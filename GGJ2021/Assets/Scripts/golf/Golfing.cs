@@ -38,6 +38,5 @@ public class Golfing : MonoBehaviour
 
     void Update()
     {
-        print(rb2D.velocity.magnitude);
     }
 }
