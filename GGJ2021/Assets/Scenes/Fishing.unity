@@ -1623,7 +1623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1666,6 +1666,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1422340085}
+  - {fileID: 1958560105}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2303,7 +2304,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1451079719}
     m_Modifications:
     - target: {fileID: 1436993873326504772, guid: dc63a6895bc19f043a8ea6298eaa7029,
         type: 3}
@@ -2313,17 +2314,17 @@ PrefabInstance:
     - target: {fileID: 1436993873326504773, guid: dc63a6895bc19f043a8ea6298eaa7029,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1436993873326504773, guid: dc63a6895bc19f043a8ea6298eaa7029,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -75.65588
+      value: -75
       objectReference: {fileID: 0}
     - target: {fileID: 1436993873326504773, guid: dc63a6895bc19f043a8ea6298eaa7029,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.656876
+      value: -11
       objectReference: {fileID: 0}
     - target: {fileID: 1436993873326504773, guid: dc63a6895bc19f043a8ea6298eaa7029,
         type: 3}
@@ -2367,6 +2368,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc63a6895bc19f043a8ea6298eaa7029, type: 3}
+--- !u!4 &1958560105 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1436993873326504773, guid: dc63a6895bc19f043a8ea6298eaa7029,
+    type: 3}
+  m_PrefabInstance: {fileID: 1958560104}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2029846299
 GameObject:
   m_ObjectHideFlags: 0
