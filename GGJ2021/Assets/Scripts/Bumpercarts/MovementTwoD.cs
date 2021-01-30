@@ -30,16 +30,16 @@ public class MovementTwoD : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            Vector2 moving = new Vector2(0, moveSpeed);
+            Vector2 moving = new Vector2(0, moveSpeed * Time.deltaTime);
             rb.AddRelativeForce(moving);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            rb.angularVelocity += turnSpeed;
+            rb.angularVelocity += turnSpeed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            rb.angularVelocity += -turnSpeed;
+            rb.angularVelocity += -turnSpeed * Time.deltaTime;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
