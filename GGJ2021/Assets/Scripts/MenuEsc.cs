@@ -31,7 +31,7 @@ public class MenuEsc : MonoBehaviour
 
     public void Arcade()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(7);
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
     }
