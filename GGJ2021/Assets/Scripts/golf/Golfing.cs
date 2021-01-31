@@ -35,7 +35,7 @@ public class Golfing : MonoBehaviour
             distanceX = Mouse.transform.position.x - this.gameObject.transform.position.x ;
             distanceY = Mouse.transform.position.y - this.gameObject.transform.position.y ;
 
-            rb2D.AddForce(new Vector3(Mathf.Clamp(distanceX,-4,4) * Time.deltaTime * GolfPower,Mathf.Clamp(distanceY,-4,4) * Time.deltaTime * GolfPower ,0));
+            rb2D.AddForce(new Vector2(Mathf.Clamp(distanceX,-4,4) * GolfPower,Mathf.Clamp(distanceY,-4,4) * GolfPower));
         }
         GolfHitCheck = false; 
     }
