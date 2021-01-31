@@ -28,7 +28,8 @@ public class FishHangle : MonoBehaviour
     public int speed = 12;
 
     public AudioSource audioS;
-    public AudioClip winSF, loseSF;
+    public AudioClip winSF, loseSF, catchSF, wringCatchSF, catchOverSF;
+    
 
     private void Start()
     {
