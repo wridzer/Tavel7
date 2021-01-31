@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     private int enims;
 
     private int waveCount;
-    public GameObject enim;
+    public GameObject enim, scoreKeep;
 
     public AudioSource audioS;
     public AudioClip winSF, loseSF, deathSF;
@@ -52,7 +52,8 @@ public class GameManager : MonoBehaviour
         }
         if (waveCount >= 4)
         {
-            Debug.Log("Win");
+            scoreKeep.GetComponent<ScoreKeep>().Bump();
+            SceneManager.LoadScene(7);
         }
     }
 }

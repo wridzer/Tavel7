@@ -18,7 +18,8 @@ public class Golfing : MonoBehaviour
 
     private void OnMouseDown()
     {
-        GolfHitCheck = true;
+        if (rb2D.velocity.magnitude < 0.1)
+        { GolfHitCheck = true; }
     }
 
     private void OnMouseUp()

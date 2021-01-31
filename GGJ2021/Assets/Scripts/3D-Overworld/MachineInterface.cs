@@ -10,7 +10,12 @@ public class MachineInterface : MonoBehaviour
     public Text outOfOrder;
     public Text interText;
 
-    public GameObject player, cutSceneCam;
+    public GameObject player, cutSceneCam, scoreKeep;
+
+    private void Start()
+    {
+        scoreKeep.GetComponent<ScoreKeep>().KeepPos(transform.position, transform.rotation);
+    }
 
     public void Update()
     {
@@ -41,7 +46,7 @@ public class MachineInterface : MonoBehaviour
     {
         cutSceneCam.SetActive(true);
         player.SetActive(false);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(minigame);
     }
 }
