@@ -67,11 +67,13 @@ public class FishHangle : MonoBehaviour
         {
             hasFish = true;
             fish = collision.gameObject;
+            audioS.PlayOneShot(catchSF);
         }
         if (collision.gameObject.tag == "BadFish")
         {
             hasBadFish = true;
             fish = collision.gameObject;
+            audioS.PlayOneShot(wringCatchSF);
         }
 
         if (collision.gameObject.tag == "FishBucket" && hasFish == true)
@@ -79,13 +81,15 @@ public class FishHangle : MonoBehaviour
             hasFish = false;
             fish.SetActive(false);
             fishPoints++;
+            audioS.PlayOneShot(catchOverSF);
         }
         if (collision.gameObject.tag == "FishBucket" && hasBadFish == true)
         {
             hasBadFish = false;
             fish.SetActive(false);
             fishPoints--;
-            if(fishPoints == -1)
+            audioS.PlayOneShot(catchOverSF);
+            if (fishPoints == -1)
             {
                 StartCoroutine(GameOverScreen());
             }
@@ -97,6 +101,7 @@ public class FishHangle : MonoBehaviour
         gameOverText.enabled = true;
         //geluid
         Time.timeScale = 0.2f;
+        audioS.PlayOneShot(loseSF);
         yield return new WaitForSeconds(3);
         gameOverText.enabled = false;
         Time.timeScale = 1f;
