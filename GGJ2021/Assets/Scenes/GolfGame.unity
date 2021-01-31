@@ -13028,7 +13028,7 @@ MonoBehaviour:
   YposSpeed: 0
   HoleInOneText: {fileID: 1395821054}
   goodJobText: {fileID: 806743788}
-  noobText: {fileID: 1087857075}
+  noobText: {fileID: 97462529}
   golf: {fileID: 586865600}
   Player: {fileID: 586865597}
   rb2D: {fileID: 586865602}
