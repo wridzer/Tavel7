@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MovementTwoD : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class MovementTwoD : MonoBehaviour
     private Vector2 bumpE;
 
     public AudioSource audioS;
-    public AudioClip hitSF;
+    public AudioClip hitSF, deathSF;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +52,7 @@ public class MovementTwoD : MonoBehaviour
         {
             rb.AddForceAtPosition(bump, collision.transform.position);
             collision.rigidbody.AddForceAtPosition(bumpE, transform.position);
+            audioS.PlayOneShot(hitSF);
         }
     }
 
@@ -67,7 +69,15 @@ public class MovementTwoD : MonoBehaviour
     {
         if(collision.tag == "Deadzone")
         {
-            Destroy(gameObject);
+            StartCoroutine(Timer());
         }
+    }
+
+    public IEnumerator Timer()
+    {
+        audioS.PlayOneShot(deathSF);
+        yield return new WaitForSeconds(1);
+        int scene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(scene);
     }
 }

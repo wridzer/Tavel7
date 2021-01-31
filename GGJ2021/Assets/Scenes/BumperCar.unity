@@ -241,7 +241,8 @@ MonoBehaviour:
   turnSpeed: 2000
   hitPower: 25
   audioS: {fileID: 178167499}
-  hitSF: {fileID: 0}
+  hitSF: {fileID: 8300000, guid: 6f10b03d79175ae4bb3e7b914e7dc454, type: 3}
+  deathSF: {fileID: 8300000, guid: 38b2ac79ab6861d4cac2d94af38d77f7, type: 3}
 --- !u!61 &178167498
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1379,9 +1380,9 @@ MonoBehaviour:
   enim: {fileID: 6391493062673429232, guid: 821cae66095c08940976b8fc58c3b290, type: 3}
   scoreKeep: {fileID: 1233006893}
   audioS: {fileID: 1757437890}
-  winSF: {fileID: 0}
-  loseSF: {fileID: 0}
-  deathSF: {fileID: 0}
+  winSF: {fileID: 8300000, guid: c15b26775a8af134eb870e5119bc94a6, type: 3}
+  loseSF: {fileID: 8300000, guid: 15ecd1f167b052f40bf6b016b83a8fd8, type: 3}
+  deathSF: {fileID: 8300000, guid: 38b2ac79ab6861d4cac2d94af38d77f7, type: 3}
   scoreT: {fileID: 1238252767}
 --- !u!82 &1757437890
 AudioSource:
