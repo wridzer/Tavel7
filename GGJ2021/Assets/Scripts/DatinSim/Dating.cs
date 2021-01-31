@@ -145,6 +145,7 @@ public class Dating : MonoBehaviour
     {
         startFalse();
         StartCoroutine(BeginScene());
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void ChadRick()
