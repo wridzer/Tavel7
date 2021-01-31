@@ -24,7 +24,11 @@ public class GroundCheck : MonoBehaviour
 
     void Update()
     {
-        if (counter != 0) { OnGround = true; audioS.PlayOneShot(landSF); }
+        if (counter != 0) 
+        { 
+            OnGround = true; 
+            //audioS.PlayOneShot(landSF);
+        }
         else { OnGround = false; }
     }
 }
