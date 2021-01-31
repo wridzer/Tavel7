@@ -5,9 +5,23 @@ using UnityEngine.UI;
 
 public class Dating : MonoBehaviour
 {
-    public Image main;
-    public Image Chadrick;
-    public Image Ullu;
+    public Image UlluIdel;
+    public Image UlluConfu;
+    public Image UlluShok;
+    public Image UlluCrazy;
+    public Image UlluIntres;
+    public Image UlluHappy;
+
+    public Image chadIdel;
+    public Image chadCri;
+    public Image chadHappy;
+    public Image chadQes;
+    public Image chadTumbup;
+    public Image chadLift;
+    public Image chadDissa;
+
+    public Image startChad;
+    public Image startUllu;
 
     public GameObject chad;
     public GameObject UWU;
@@ -209,12 +223,13 @@ public class Dating : MonoBehaviour
 
     public IEnumerator BeginScene()
     {
-        main.enabled = true;
         text1.enabled = true;
 
         while (!Input.GetMouseButtonDown(0))
             yield return null;
 
+        startChad.enabled = true;
+        startUllu.enabled = true;
         text1.enabled = false;
         chad.SetActive(true);
         UWU.SetActive(true);
@@ -226,9 +241,12 @@ public class Dating : MonoBehaviour
 
     public IEnumerator ChadRickC()
     {
-        Chadrick.enabled = true;
+        //Chadrick.enabled = true;
         chad.SetActive(false);
         UWU.SetActive(false);
+        startChad.enabled = false;
+        startUllu.enabled = false;
+        chadIdel.enabled = true;
         text2.enabled = true;
 
         while (!Input.GetMouseButtonDown(0))
@@ -236,6 +254,8 @@ public class Dating : MonoBehaviour
 
         text2.enabled = false;
         text3.enabled = true;
+        chadIdel.enabled = false;
+        chadCri.enabled = true;
         yield return null;
 
         while (!Input.GetMouseButtonDown(0))
@@ -260,6 +280,9 @@ public class Dating : MonoBehaviour
         C1Bbutton.SetActive(false);
         C1Cbutton.SetActive(false);
         text5.enabled = true;
+        chadIdel.enabled = false;
+        chadCri.enabled = false;
+        chadDissa.enabled = true;
         yield return null;
 
         while (!Input.GetMouseButtonDown(0))
@@ -287,6 +310,7 @@ public class Dating : MonoBehaviour
             yield return null;
 
         text8.enabled = false;
+        chadDissa.enabled = false;
         Debug.Log("End Dating Sim");
     }
     public IEnumerator C1Bc()
@@ -295,6 +319,9 @@ public class Dating : MonoBehaviour
         C1Bbutton.SetActive(false);
         C1Cbutton.SetActive(false);
         text9.enabled = true;
+        chadIdel.enabled = false;
+        chadCri.enabled = false;
+        chadTumbup.enabled = true;
         yield return null;
 
         while (!Input.GetMouseButtonDown(0))
@@ -309,6 +336,7 @@ public class Dating : MonoBehaviour
 
         text10.enabled = false;
         text11.enabled = true;
+        chadTumbup.enabled = false;
         yield return null;
 
         while (!Input.GetMouseButtonDown(0))
@@ -329,6 +357,9 @@ public class Dating : MonoBehaviour
         C1Abutton.SetActive(false);
         C1Bbutton.SetActive(false);
         C1Cbutton.SetActive(false);
+        chadIdel.enabled = false;
+        chadCri.enabled = false;
+        chadTumbup.enabled = true;
         text13.enabled = true;
         yield return null;
 
@@ -351,6 +382,8 @@ public class Dating : MonoBehaviour
 
         text15.enabled = false;
         text16.enabled = true;
+        chadTumbup.enabled = false;
+        chadQes.enabled = true;
         yield return null;
 
         while (!Input.GetMouseButtonDown(0))
@@ -366,6 +399,8 @@ public class Dating : MonoBehaviour
         C2Abutton.SetActive(false);
         C2Bbutton.SetActive(false);
         C2Cbutton.SetActive(false);
+        chadQes.enabled = false;
+        chadDissa.enabled = true;
         text17.enabled = true;
         yield return null;
 
@@ -380,12 +415,15 @@ public class Dating : MonoBehaviour
             yield return null;
 
         text18.enabled = false;
+        chadDissa.enabled = false;
         Debug.Log("End Dating Sim");
     }
     public IEnumerator C2Bc()
     {
         C2Abutton.SetActive(false);
         C2Bbutton.SetActive(false);
+        chadQes.enabled = false;
+        chadDissa.enabled = true;
         C2Cbutton.SetActive(false);
         text19.enabled = true;
         yield return null;
@@ -407,6 +445,8 @@ public class Dating : MonoBehaviour
         while (!Input.GetMouseButtonDown(0))
             yield return null;
 
+        chadDissa.enabled = false;
+        chadCri.enabled = true;
         text21.enabled = false;
         text22.enabled = true;
         yield return null;
@@ -422,6 +462,7 @@ public class Dating : MonoBehaviour
             yield return null;
 
         text23.enabled = false;
+        chadCri.enabled = false;
         Debug.Log("End Dating Sim");
     }
     public IEnumerator C2Cc()
@@ -430,11 +471,15 @@ public class Dating : MonoBehaviour
         C2Bbutton.SetActive(false);
         C2Cbutton.SetActive(false);
         text24.enabled = true;
+        chadQes.enabled = false;
+        chadTumbup.enabled = true;
         yield return null;
 
         while (!Input.GetMouseButtonDown(0))
             yield return null;
 
+        chadTumbup.enabled = false;
+        chadHappy.enabled = true;
         text24.enabled = false;
         text25.enabled = true;
         yield return null;
@@ -466,12 +511,16 @@ public class Dating : MonoBehaviour
         C3Abutton.SetActive(false);
         C3Bbutton.SetActive(false);
         C3Cbutton.SetActive(false);
+        chadHappy.enabled = false;
+        chadQes.enabled = true;
         text28.enabled = true;
         yield return null;
 
         while (!Input.GetMouseButtonDown(0))
             yield return null;
 
+        chadTumbup.enabled = true;
+        chadQes.enabled = false;
         text28.enabled = false;
         text29.enabled = true;
         yield return null;
@@ -500,6 +549,8 @@ public class Dating : MonoBehaviour
         while (!Input.GetMouseButtonDown(0))
             yield return null; text30.enabled = false;
 
+        chadTumbup.enabled = false;
+        chadLift.enabled = true;
         text32.enabled = false;
         text33.enabled = true;
         yield return null;
@@ -515,6 +566,7 @@ public class Dating : MonoBehaviour
             yield return null; text30.enabled = false;
 
         text34.enabled = false;
+        chadLift.enabled = false;
         Debug.Log("you won tha Dating Sim");
     }
     public IEnumerator C3Bc()
@@ -522,6 +574,8 @@ public class Dating : MonoBehaviour
         C3Abutton.SetActive(false);
         C3Bbutton.SetActive(false);
         C3Cbutton.SetActive(false);
+        chadHappy.enabled = false;
+        chadDissa.enabled = true;
         text35.enabled = true;
         yield return null;
 
@@ -535,6 +589,8 @@ public class Dating : MonoBehaviour
         while (!Input.GetMouseButtonDown(0))
             yield return null;
 
+        chadDissa.enabled = false;
+        chadLift.enabled = true;
         text36.enabled = false;
         text37.enabled = true;
         yield return null;
@@ -557,6 +613,7 @@ public class Dating : MonoBehaviour
             yield return null;
 
         text39.enabled = false;
+        chadLift.enabled = false;
         Debug.Log("End Dating Sim");
     }
     public IEnumerator C3Cc()
@@ -564,6 +621,8 @@ public class Dating : MonoBehaviour
         C3Abutton.SetActive(false);
         C3Bbutton.SetActive(false);
         C3Cbutton.SetActive(false);
+        chadHappy.enabled = false;
+        chadCri.enabled = true;
         text40.enabled = true;
         yield return null;
 
@@ -606,19 +665,24 @@ public class Dating : MonoBehaviour
             yield return null;
 
         text45.enabled = false;
+        chadCri.enabled = false;
         Debug.Log("End Dating Sim");
     }
 
     public IEnumerator UlluUWUC()
     {
-        Ullu.enabled = true;
         chad.SetActive(false);
         UWU.SetActive(false);
+        startChad.enabled = false;
+        startUllu.enabled = false;
+        UlluIdel.enabled = true;
         text46.enabled = true;
 
         while (!Input.GetMouseButtonDown(0))
             yield return null;
 
+        UlluIdel.enabled = false;
+        UlluConfu.enabled = true;
         text46.enabled = false;
         text47.enabled = true;
         yield return null;
@@ -652,6 +716,8 @@ public class Dating : MonoBehaviour
         U1Bbutton.SetActive(false);
         U1Cbutton.SetActive(false);
         text50.enabled = true;
+        UlluConfu.enabled = false;
+        UlluShok.enabled = true;
         yield return null;
 
         while (!Input.GetMouseButtonDown(0))
@@ -665,6 +731,7 @@ public class Dating : MonoBehaviour
             yield return null;
 
         text51.enabled = false;
+        UlluShok.enabled = false;
         Debug.Log("End Dating Sim");
     }
     public IEnumerator U1Bc()
@@ -673,6 +740,8 @@ public class Dating : MonoBehaviour
         U1Bbutton.SetActive(false);
         U1Cbutton.SetActive(false);
         text52.enabled = true;
+        UlluConfu.enabled = false;
+        UlluCrazy.enabled = true;
         yield return null;
 
         while (!Input.GetMouseButtonDown(0))
@@ -693,6 +762,7 @@ public class Dating : MonoBehaviour
             yield return null;
 
         text54.enabled = false;
+        UlluCrazy.enabled = false;
         Debug.Log("End Dating Sim");
     }
     public IEnumerator U1Cc()
@@ -701,11 +771,15 @@ public class Dating : MonoBehaviour
         U1Bbutton.SetActive(false);
         U1Cbutton.SetActive(false);
         text55.enabled = true;
+        UlluConfu.enabled = false;
+        UlluShok.enabled = true;
         yield return null;
 
         while (!Input.GetMouseButtonDown(0))
             yield return null;
 
+        UlluShok.enabled = false;
+        UlluHappy.enabled = true;
         text55.enabled = false;
         text56.enabled = true;
         yield return null;
@@ -731,7 +805,6 @@ public class Dating : MonoBehaviour
         U2Bbutton.SetActive(true);
         U2Cbutton.SetActive(true);
         text58.enabled = false;
-        Debug.Log("End Dating Sim");
     }
     public IEnumerator U2Ac()
     {
@@ -739,11 +812,15 @@ public class Dating : MonoBehaviour
         U2Bbutton.SetActive(false);
         U2Cbutton.SetActive(false);
         text59.enabled = true;
+        UlluHappy.enabled = false;
+        UlluShok.enabled = true;
         yield return null;
 
         while (!Input.GetMouseButtonDown(0))
             yield return null;
 
+        UlluShok.enabled = false;
+        UlluHappy.enabled = true;
         text59.enabled = false;
         text60.enabled = true;
         yield return null;
@@ -758,6 +835,8 @@ public class Dating : MonoBehaviour
         while (!Input.GetMouseButtonDown(0))
             yield return null;
 
+        UlluHappy.enabled = false;
+        UlluIdel.enabled = true;
         text61.enabled = false;
         text62.enabled = true;
         yield return null;
@@ -775,6 +854,8 @@ public class Dating : MonoBehaviour
         U2Abutton.SetActive(false);
         U2Bbutton.SetActive(false);
         U2Cbutton.SetActive(false);
+        UlluHappy.enabled = false;
+        UlluShok.enabled = true;
         text63.enabled = true;
         yield return null;
 
@@ -789,6 +870,7 @@ public class Dating : MonoBehaviour
             yield return null;
 
         text64.enabled = false;
+        UlluShok.enabled = false;
         Debug.Log("End Dating Sim");
     }
     public IEnumerator U2Cc()
@@ -796,6 +878,8 @@ public class Dating : MonoBehaviour
         U2Abutton.SetActive(false);
         U2Bbutton.SetActive(false);
         U2Cbutton.SetActive(false);
+        UlluHappy.enabled = false;
+        UlluCrazy.enabled = true;
         text65.enabled = true;
         yield return null;
 
@@ -810,6 +894,7 @@ public class Dating : MonoBehaviour
             yield return null;
 
         text66.enabled = false;
+        UlluCrazy.enabled = false;
         Debug.Log("End Dating Sim");
     }
     public IEnumerator U3Ac()
@@ -818,11 +903,15 @@ public class Dating : MonoBehaviour
         U3Bbutton.SetActive(false);
         U3Cbutton.SetActive(false);
         text67.enabled = true;
+        UlluIdel.enabled = false;
+        UlluShok.enabled = true;
         yield return null;
 
         while (!Input.GetMouseButtonDown(0))
             yield return null;
 
+        UlluShok.enabled = false;
+        UlluCrazy.enabled = true;
         text67.enabled = false;
         text68.enabled = true;
         yield return null;
@@ -838,6 +927,7 @@ public class Dating : MonoBehaviour
             yield return null;
 
         text70.enabled = false;
+        UlluCrazy.enabled = false;
         Debug.Log("End Dating Sim");
     }
     public IEnumerator U3Bc()
@@ -846,11 +936,15 @@ public class Dating : MonoBehaviour
         U3Bbutton.SetActive(false);
         U3Cbutton.SetActive(false);
         text71.enabled = true;
+        UlluIdel.enabled = false;
+        UlluHappy.enabled = true;
         yield return null;
 
         while (!Input.GetMouseButtonDown(0))
             yield return null;
 
+        UlluIdel.enabled = true;
+        UlluHappy.enabled = false;
         text71.enabled = false;
         text72.enabled = true;
         yield return null;
@@ -866,6 +960,7 @@ public class Dating : MonoBehaviour
             yield return null;
 
         text73.enabled = false;
+        UlluHappy.enabled = false;
         Debug.Log("End Dating Sim");
     }
     public IEnumerator U3Cc()
@@ -874,11 +969,15 @@ public class Dating : MonoBehaviour
         U3Bbutton.SetActive(false);
         U3Cbutton.SetActive(false);
         text74.enabled = true;
+        UlluIdel.enabled = false;
+        UlluHappy.enabled = true;
         yield return null;
 
         while (!Input.GetMouseButtonDown(0))
             yield return null;
 
+        UlluIdel.enabled = true;
+        UlluHappy.enabled = false;
         text74.enabled = false;
         text75.enabled = true;
         yield return null;
@@ -900,6 +999,8 @@ public class Dating : MonoBehaviour
         while (!Input.GetMouseButtonDown(0))
             yield return null;
 
+        UlluIdel.enabled = false;
+        UlluHappy.enabled = true;
         text77.enabled = false;
         text78.enabled = true;
         yield return null;
@@ -907,6 +1008,8 @@ public class Dating : MonoBehaviour
         while (!Input.GetMouseButtonDown(0))
             yield return null;
 
+        UlluIdel.enabled = true;
+        UlluHappy.enabled = false;
         text78.enabled = false;
         text79.enabled = true;
         yield return null;
@@ -927,9 +1030,23 @@ public class Dating : MonoBehaviour
 
     public void startFalse()
     {
-        main.enabled = false;
-        Chadrick.enabled = false;
-        Ullu.enabled = false;
+        UlluCrazy.enabled = false;
+        UlluConfu.enabled = false;
+        UlluHappy.enabled = false;
+        UlluIdel.enabled = false;
+        UlluIntres.enabled = false;
+        UlluShok.enabled = false;
+
+        chadCri.enabled = false;
+        chadHappy.enabled = false;
+        chadIdel.enabled = false;
+        chadLift.enabled = false;
+        chadQes.enabled = false;
+        chadTumbup.enabled = false;
+        chadDissa.enabled = false;
+
+        startChad.enabled = false;
+        startUllu.enabled = false;
 
         chad.SetActive(false);
         UWU.SetActive(false);
