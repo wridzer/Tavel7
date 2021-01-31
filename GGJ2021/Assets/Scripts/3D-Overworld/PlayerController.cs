@@ -124,7 +124,7 @@ public class PlayerController : MonoBehaviour
     }
     void Jump()
     {
-        Vector3 jump = new Vector3(0f, jumpHeigt, 0f);
+        Vector3 jump = new Vector3(0f, jumpHeigt * Time.deltaTime, 0f);
         if (grounded == true)
         {
             player.GetComponent<Rigidbody>().AddRelativeForce(jump);
