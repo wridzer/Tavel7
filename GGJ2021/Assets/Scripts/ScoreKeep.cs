@@ -17,7 +17,8 @@ public class ScoreKeep : MonoBehaviour
         if(SceneManager.GetActiveScene().buildIndex == 1 || SceneManager.GetActiveScene().buildIndex == 7)
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
-            player.transform.position = lastPos;
+            Vector3 extraHigh = new Vector3(0, 2, 0);
+            player.transform.position = lastPos + extraHigh;
             player.transform.rotation = lastRot;
         }
     }

@@ -41,7 +41,7 @@ public class GameManger : MonoBehaviour
             Debug.Log("Won");
             audioS.PlayOneShot(winSF);
             winCheck.GetComponent<ScoreKeep>().Race();
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(7);
         }
     }
 
