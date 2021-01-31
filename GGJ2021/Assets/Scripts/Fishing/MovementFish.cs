@@ -9,6 +9,8 @@ public class MovementFish : MonoBehaviour
     public float SPEED;
     private Vector3 scaleChange;
 
+    
+
     public FishHangle fishH;
     public GameObject wayPoi;
     public Vector3 playerLoc;
