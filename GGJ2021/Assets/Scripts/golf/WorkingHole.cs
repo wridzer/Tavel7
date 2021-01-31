@@ -6,6 +6,8 @@ public class WorkingHole : MonoBehaviour
 {
     [SerializeField] float Xpos;
     [SerializeField] float Ypos;
+    [SerializeField] float XposSpeed;
+    [SerializeField] float YposSpeed;
 
     public GameObject Player;
     public Rigidbody2D rb2D;
@@ -15,6 +17,7 @@ public class WorkingHole : MonoBehaviour
         if (rb2D.velocity.magnitude < 3)
         {
             Player.transform.position = new Vector3(Xpos, Ypos, -1);
+            rb2D.velocity = new Vector3(XposSpeed, YposSpeed, 0);
             StartCoroutine(CameraDelay());
         }
 
@@ -30,8 +33,8 @@ public class WorkingHole : MonoBehaviour
 
     private IEnumerator CameraDelay()
         {
-        yield return new WaitForSeconds(5);
-        camara.transform.position = new Vector3(camara.transform.position.x + 20, 0, -10);
+        yield return new WaitForSeconds(2);
+        camara.transform.position = new Vector3(camara.transform.position.x + 20, 1, -10);
         
         }
 
