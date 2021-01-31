@@ -16,23 +16,24 @@ public class WorkingEndHole : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (golf.Hits == 1)
-        {
-            HoleInOneText.GetComponent<SpriteRenderer>().enabled = true;
-            audioS.PlayOneShot(holeInOne);
-        }
-        else if (golf.Hits <= par)
-        {
-            goodJobText.GetComponent<SpriteRenderer>().enabled = true;
-            audioS.PlayOneShot(win);
-        }
-        else
-        {
-            noobText.GetComponent<SpriteRenderer>().enabled = true;
-            audioS.PlayOneShot(loser);
-        }
+
         if (rb2D.velocity.magnitude < 3)
         {
+            if (golf.Hits == 1)
+            {
+                HoleInOneText.GetComponent<SpriteRenderer>().enabled = true;
+                audioS.PlayOneShot(holeInOne);
+            }
+            else if (golf.Hits <= par)
+            {
+                goodJobText.GetComponent<SpriteRenderer>().enabled = true;
+                audioS.PlayOneShot(win);
+            }
+            else
+            {
+                noobText.GetComponent<SpriteRenderer>().enabled = true;
+                audioS.PlayOneShot(loser);
+            }
             Player.transform.position = new Vector3(0, 0, -1);
             StartCoroutine(CameraDelay());
         }
