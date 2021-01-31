@@ -7,7 +7,11 @@ using UnityEngine.SceneManagement;
 public class Dating : MonoBehaviour
 {
     public AudioSource audioS;
+    public AudioSource musicS;
     public AudioClip winSF;
+    public AudioClip click;
+    public AudioClip Lose;
+    public AudioClip Music;
     public GameObject scoreKeep;
 
     public Image UlluIdel;
@@ -140,7 +144,6 @@ public class Dating : MonoBehaviour
     void Start()
     {
         startFalse();
-
         StartCoroutine(BeginScene());
     }
 
@@ -226,7 +229,13 @@ public class Dating : MonoBehaviour
         StartCoroutine(U3Cc());
     }
 
-
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            audioS.PlayOneShot(click);
+        }
+    }
 
     public IEnumerator BeginScene()
     {
@@ -574,7 +583,7 @@ public class Dating : MonoBehaviour
 
         text34.enabled = false;
         chadLift.enabled = false;
-        Debug.Log("you won tha Dating Sim");
+        StartCoroutine(WinCond());
     }
     public IEnumerator C3Bc()
     {
