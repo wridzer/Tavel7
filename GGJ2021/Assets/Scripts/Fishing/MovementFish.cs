@@ -7,6 +7,7 @@ public class MovementFish : MonoBehaviour
     public GameObject CP1, CP2;
     private GameObject target;
     public float SPEED;
+    private Vector3 scaleChange;
 
     public FishHangle fishH;
 
@@ -29,12 +30,25 @@ public class MovementFish : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject == CP1)
+        {
             target = CP2;
+            Vector3 newScale = gameObject.transform.localScale;
+            newScale.x *= -1;
+            gameObject.transform.localScale = newScale;
+        }
+            
 
         if (collision.gameObject == CP2)
+        {
             target = CP1;
+            Vector3 newScale = gameObject.transform.localScale;
+            newScale.x *= -1;
+            gameObject.transform.localScale = newScale;
+        }
+            
 
-        if (collision.gameObject.tag == "FishHangel" && fishH.hasFish == false)
+
+        if (collision.gameObject.tag == "FishHangel" && fishH.hasFish == false && fishH.hasBadFish == false)
         {
             target = collision.gameObject;
         }

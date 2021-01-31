@@ -13,6 +13,7 @@ public class FishHangle : MonoBehaviour
     public KeyCode moveDown;
 
     public bool hasFish = false;
+    public bool hasBadFish = false;
 
     public int fishPoints;
 
@@ -39,9 +40,13 @@ public class FishHangle : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         }
 
-        fishScore.text = fishPoints.ToString();
-
         line.GetComponent<LineRenderer>().SetPosition(1, new Vector3(this.gameObject.transform.position.x - 0.0625f, this.gameObject.transform.position.y, this.gameObject.transform.position.z));
+
+        fishScore.text = fishPoints.ToString();
+        if (fishPoints >= 3)
+        {
+
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -51,12 +56,27 @@ public class FishHangle : MonoBehaviour
             hasFish = true;
             fish = collision.gameObject;
         }
+        if (collision.gameObject.tag == "BadFish")
+        {
+            hasBadFish = true;
+            fish = collision.gameObject;
+        }
 
-        if(collision.gameObject.tag == "FishBucket" && hasFish == true)
+        if (collision.gameObject.tag == "FishBucket" && hasFish == true)
         {
             hasFish = false;
             Destroy(fish);
             fishPoints++;
+        }
+        if (collision.gameObject.tag == "FishBucket" && hasBadFish == true)
+        {
+            hasBadFish = false;
+            Destroy(fish);
+            fishPoints--;
+            if(fishPoints == -1)
+            {
+                
+            }
         }
     }
 }
