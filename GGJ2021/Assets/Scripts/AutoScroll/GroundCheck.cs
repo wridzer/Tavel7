@@ -7,6 +7,9 @@ public class GroundCheck : MonoBehaviour
     [SerializeField]
     int counter = 0;
 
+    public AudioSource audioS;
+    public AudioClip landSF;
+
     public bool OnGround = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,7 +24,7 @@ public class GroundCheck : MonoBehaviour
 
     void Update()
     {
-        if (counter != 0) { OnGround = true; }
+        if (counter != 0) { OnGround = true; audioS.PlayOneShot(landSF); }
         else { OnGround = false; }
     }
 }
