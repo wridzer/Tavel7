@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Dating : MonoBehaviour
 {
@@ -45,6 +46,8 @@ public class Dating : MonoBehaviour
     public GameObject U3Abutton;
     public GameObject U3Bbutton;
     public GameObject U3Cbutton;
+
+    public GameObject RestartButton;
 
     public Text text1;
     public Text text2;
@@ -311,7 +314,7 @@ public class Dating : MonoBehaviour
 
         text8.enabled = false;
         chadDissa.enabled = false;
-        Debug.Log("End Dating Sim");
+        RestartButton.SetActive(true);
     }
     public IEnumerator C1Bc()
     {
@@ -350,7 +353,7 @@ public class Dating : MonoBehaviour
             yield return null;
 
         text12.enabled = false;
-        Debug.Log("End Dating Sim");
+        RestartButton.SetActive(true);
     }
     public IEnumerator C1Cc()
     {
@@ -416,7 +419,7 @@ public class Dating : MonoBehaviour
 
         text18.enabled = false;
         chadDissa.enabled = false;
-        Debug.Log("End Dating Sim");
+        RestartButton.SetActive(true);
     }
     public IEnumerator C2Bc()
     {
@@ -463,7 +466,7 @@ public class Dating : MonoBehaviour
 
         text23.enabled = false;
         chadCri.enabled = false;
-        Debug.Log("End Dating Sim");
+        RestartButton.SetActive(true);
     }
     public IEnumerator C2Cc()
     {
@@ -614,7 +617,7 @@ public class Dating : MonoBehaviour
 
         text39.enabled = false;
         chadLift.enabled = false;
-        Debug.Log("End Dating Sim");
+        RestartButton.SetActive(true);
     }
     public IEnumerator C3Cc()
     {
@@ -666,7 +669,7 @@ public class Dating : MonoBehaviour
 
         text45.enabled = false;
         chadCri.enabled = false;
-        Debug.Log("End Dating Sim");
+        RestartButton.SetActive(true);
     }
 
     public IEnumerator UlluUWUC()
@@ -732,7 +735,7 @@ public class Dating : MonoBehaviour
 
         text51.enabled = false;
         UlluShok.enabled = false;
-        Debug.Log("End Dating Sim");
+        RestartButton.SetActive(true);
     }
     public IEnumerator U1Bc()
     {
@@ -763,7 +766,7 @@ public class Dating : MonoBehaviour
 
         text54.enabled = false;
         UlluCrazy.enabled = false;
-        Debug.Log("End Dating Sim");
+        RestartButton.SetActive(true);
     }
     public IEnumerator U1Cc()
     {
@@ -871,7 +874,7 @@ public class Dating : MonoBehaviour
 
         text64.enabled = false;
         UlluShok.enabled = false;
-        Debug.Log("End Dating Sim");
+        RestartButton.SetActive(true);
     }
     public IEnumerator U2Cc()
     {
@@ -895,7 +898,7 @@ public class Dating : MonoBehaviour
 
         text66.enabled = false;
         UlluCrazy.enabled = false;
-        Debug.Log("End Dating Sim");
+        RestartButton.SetActive(true);
     }
     public IEnumerator U3Ac()
     {
@@ -928,7 +931,7 @@ public class Dating : MonoBehaviour
 
         text70.enabled = false;
         UlluCrazy.enabled = false;
-        Debug.Log("End Dating Sim");
+        RestartButton.SetActive(true);
     }
     public IEnumerator U3Bc()
     {
@@ -961,7 +964,7 @@ public class Dating : MonoBehaviour
 
         text73.enabled = false;
         UlluHappy.enabled = false;
-        Debug.Log("End Dating Sim");
+        RestartButton.SetActive(true);
     }
     public IEnumerator U3Cc()
     {
@@ -1028,6 +1031,11 @@ public class Dating : MonoBehaviour
         Debug.Log("you won tha Dating Sim");
     }
 
+    public void restartScreen()
+    {
+        SceneManager.LoadScene("DatingSim");
+    }
+
     public void startFalse()
     {
         UlluCrazy.enabled = false;
@@ -1068,6 +1076,7 @@ public class Dating : MonoBehaviour
         U3Abutton.SetActive(false);
         U3Bbutton.SetActive(false);
         U3Cbutton.SetActive(false);
+        RestartButton.SetActive(false);
 
         text1.enabled = false;
         text2.enabled = false;
