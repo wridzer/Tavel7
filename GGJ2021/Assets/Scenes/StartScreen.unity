@@ -1005,7 +1005,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Tavel 7 The game
+  m_Text: ARCANED
 --- !u!222 &2026584243
 CanvasRenderer:
   m_ObjectHideFlags: 0
