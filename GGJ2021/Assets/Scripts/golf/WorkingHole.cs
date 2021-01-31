@@ -9,6 +9,8 @@ public class WorkingHole : MonoBehaviour
     [SerializeField] float XposSpeed;
     [SerializeField] float YposSpeed;
 
+    public GameObject HoleInOneText;
+    public Golfing golf;
     public GameObject Player;
     public Rigidbody2D rb2D;
     public GameObject camara;
@@ -16,8 +18,13 @@ public class WorkingHole : MonoBehaviour
     {
         if (rb2D.velocity.magnitude < 3)
         {
+            if (golf.Hits == 1)
+            {
+                HoleInOneText.GetComponent<SpriteRenderer>().enabled = true;
+            }
             Player.transform.position = new Vector3(Xpos, Ypos, -1);
             rb2D.velocity = new Vector3(XposSpeed, YposSpeed, 0);
+            golf.Hits = 0;
             StartCoroutine(CameraDelay());
         }
 
@@ -35,7 +42,6 @@ public class WorkingHole : MonoBehaviour
         {
         yield return new WaitForSeconds(2);
         camara.transform.position = new Vector3(camara.transform.position.x + 20, 1, -10);
-        
         }
 
 }

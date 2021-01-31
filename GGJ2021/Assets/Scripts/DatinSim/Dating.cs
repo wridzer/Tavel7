@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class Dating : MonoBehaviour
 {
+    public AudioSource audioS;
+    public AudioClip winSF;
+    public GameObject scoreKeep;
+
     public Image UlluIdel;
     public Image UlluConfu;
     public Image UlluShok;
@@ -1028,7 +1032,7 @@ public class Dating : MonoBehaviour
             yield return null;
 
         text80.enabled = false;
-        Debug.Log("you won tha Dating Sim");
+        StartCoroutine(WinCond());
     }
 
     public void restartScreen()
@@ -1158,5 +1162,13 @@ public class Dating : MonoBehaviour
         text78.enabled = false;
         text79.enabled = false;
         text80.enabled = false;
+    }
+
+    public IEnumerator WinCond()
+    {
+        audioS.PlayOneShot(winSF);
+        yield return new WaitForSeconds(1);
+        scoreKeep.GetComponent<ScoreKeep>().Date();
+        SceneManager.LoadScene(7);
     }
 }
