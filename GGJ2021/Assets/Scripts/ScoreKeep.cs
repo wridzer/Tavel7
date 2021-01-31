@@ -14,7 +14,7 @@ public class ScoreKeep : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(SceneManager.GetActiveScene().buildIndex != 0)
+        if(SceneManager.GetActiveScene().buildIndex == 1 || SceneManager.GetActiveScene().buildIndex == 7)
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             player.transform.position = lastPos;

@@ -46,7 +46,7 @@ public class MachineInterface : MonoBehaviour
     {
         cutSceneCam.SetActive(true);
         player.SetActive(false);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(minigame);
     }
 }

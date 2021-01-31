@@ -122,7 +122,7 @@ public class PlayerController : MonoBehaviour
 
     void Die()
     {
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene(7);
     }
     void Jump()
     {
