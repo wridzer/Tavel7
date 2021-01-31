@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class FishHangle : MonoBehaviour
 {
@@ -21,9 +22,16 @@ public class FishHangle : MonoBehaviour
     public GameObject line;
 
     public Text fishScore;
+    public Text gameOverText;
+    public Text youWinText;
 
     public int speed = 12;
 
+    private void Start()
+    {
+        gameOverText.enabled = false;
+        youWinText.enabled = false;
+    }
 
     void Update()
     {
@@ -44,8 +52,9 @@ public class FishHangle : MonoBehaviour
 
         fishScore.text = fishPoints.ToString();
         if (fishPoints >= 3)
-        {
-
+        {//win condition
+            youWinText.enabled = true;
+            //geluid
         }
     }
 
@@ -75,8 +84,19 @@ public class FishHangle : MonoBehaviour
             fishPoints--;
             if(fishPoints == -1)
             {
-                
+                StartCoroutine(GameOverScreen());
             }
         }
+    }
+
+    public IEnumerator GameOverScreen()
+    {
+        gameOverText.enabled = true;
+        //geluid
+        Time.timeScale = 0.2f;
+        yield return new WaitForSeconds(3);
+        gameOverText.enabled = false;
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Fishing");
     }
 }
