@@ -83,7 +83,7 @@ public class Dating : MonoBehaviour
     public Text text46;
     public Text text47;
     public Text text48;
-    public Text text49;/*
+    public Text text49;
     public Text text50;
     public Text text51;
     public Text text52;
@@ -115,12 +115,6 @@ public class Dating : MonoBehaviour
     public Text text78;
     public Text text79;
     public Text text80;
-    public Text text81;
-    public Text text82;
-    public Text text83;
-    public Text text84;
-    public Text text85;
-    public Text text86;*/
 
     void Start()
     {
@@ -617,7 +611,7 @@ public class Dating : MonoBehaviour
 
     public IEnumerator UlluUWUC()
     {
-        Chadrick.enabled = true;
+        Ullu.enabled = true;
         chad.SetActive(false);
         UWU.SetActive(false);
         text46.enabled = true;
@@ -625,88 +619,310 @@ public class Dating : MonoBehaviour
         while (!Input.GetMouseButtonDown(0))
             yield return null;
 
-        text2.enabled = false;
-        text3.enabled = true;
+        text46.enabled = false;
+        text47.enabled = true;
         yield return null;
 
         while (!Input.GetMouseButtonDown(0))
             yield return null;
 
-        text3.enabled = false;
-        text4.enabled = true;
+        text47.enabled = false;
+        text48.enabled = true;
         yield return null;
 
         while (!Input.GetMouseButtonDown(0))
             yield return null;
 
-        C1Abutton.SetActive(true);
-        C1Bbutton.SetActive(true);
-        C1Cbutton.SetActive(true);
-        text4.enabled = false;
+        text48.enabled = false;
+        text49.enabled = true;
+        yield return null;
+
+        while (!Input.GetMouseButtonDown(0))
+            yield return null;
+
+        text49.enabled = false;
+        U1Abutton.SetActive(true);
+        U1Bbutton.SetActive(true);
+        U1Cbutton.SetActive(true);
         yield return null;
     }
     public IEnumerator U1Ac()
     {
+        U1Abutton.SetActive(false);
+        U1Bbutton.SetActive(false);
+        U1Cbutton.SetActive(false);
+        text50.enabled = true;
         yield return null;
 
         while (!Input.GetMouseButtonDown(0))
             yield return null;
+
+        text50.enabled = false;
+        text51.enabled = true;
+        yield return null;
+
+        while (!Input.GetMouseButtonDown(0))
+            yield return null;
+
+        text51.enabled = false;
+        Debug.Log("End Dating Sim");
     }
     public IEnumerator U1Bc()
     {
+        U1Abutton.SetActive(false);
+        U1Bbutton.SetActive(false);
+        U1Cbutton.SetActive(false);
+        text52.enabled = true;
         yield return null;
 
         while (!Input.GetMouseButtonDown(0))
             yield return null;
+
+        text52.enabled = false;
+        text53.enabled = true;
+        yield return null;
+
+        while (!Input.GetMouseButtonDown(0))
+            yield return null;
+
+        text53.enabled = false;
+        text54.enabled = true;
+        yield return null;
+
+        while (!Input.GetMouseButtonDown(0))
+            yield return null;
+
+        text54.enabled = false;
+        Debug.Log("End Dating Sim");
     }
     public IEnumerator U1Cc()
     {
+        U1Abutton.SetActive(false);
+        U1Bbutton.SetActive(false);
+        U1Cbutton.SetActive(false);
+        text55.enabled = true;
         yield return null;
 
         while (!Input.GetMouseButtonDown(0))
             yield return null;
+
+        text55.enabled = false;
+        text56.enabled = true;
+        yield return null;
+
+        while (!Input.GetMouseButtonDown(0))
+            yield return null;
+
+        text56.enabled = false;
+        text57.enabled = true;
+        yield return null;
+
+        while (!Input.GetMouseButtonDown(0))
+            yield return null;
+
+        text57.enabled = false;
+        text58.enabled = true;
+        yield return null;
+
+        while (!Input.GetMouseButtonDown(0))
+            yield return null;
+
+        U2Abutton.SetActive(true);
+        U2Bbutton.SetActive(true);
+        U2Cbutton.SetActive(true);
+        text58.enabled = false;
+        Debug.Log("End Dating Sim");
     }
     public IEnumerator U2Ac()
     {
+        U2Abutton.SetActive(false);
+        U2Bbutton.SetActive(false);
+        U2Cbutton.SetActive(false);
+        text59.enabled = true;
         yield return null;
 
         while (!Input.GetMouseButtonDown(0))
             yield return null;
+
+        text59.enabled = false;
+        text60.enabled = true;
+        yield return null;
+
+        while (!Input.GetMouseButtonDown(0))
+            yield return null;
+
+        text60.enabled = false;
+        text61.enabled = true;
+        yield return null;
+
+        while (!Input.GetMouseButtonDown(0))
+            yield return null;
+
+        text61.enabled = false;
+        text62.enabled = true;
+        yield return null;
+
+        while (!Input.GetMouseButtonDown(0))
+            yield return null;
+
+        U3Abutton.SetActive(true);
+        U3Bbutton.SetActive(true);
+        U3Cbutton.SetActive(true);
+        text62.enabled = false;
     }
     public IEnumerator U2Bc()
     {
+        U2Abutton.SetActive(false);
+        U2Bbutton.SetActive(false);
+        U2Cbutton.SetActive(false);
+        text63.enabled = true;
         yield return null;
 
         while (!Input.GetMouseButtonDown(0))
             yield return null;
+
+        text63.enabled = false;
+        text64.enabled = true;
+        yield return null;
+
+        while (!Input.GetMouseButtonDown(0))
+            yield return null;
+
+        text64.enabled = false;
+        Debug.Log("End Dating Sim");
     }
     public IEnumerator U2Cc()
     {
+        U2Abutton.SetActive(false);
+        U2Bbutton.SetActive(false);
+        U2Cbutton.SetActive(false);
+        text65.enabled = true;
         yield return null;
 
         while (!Input.GetMouseButtonDown(0))
             yield return null;
+
+        text65.enabled = false;
+        text66.enabled = true;
+        yield return null;
+
+        while (!Input.GetMouseButtonDown(0))
+            yield return null;
+
+        text66.enabled = false;
+        Debug.Log("End Dating Sim");
     }
     public IEnumerator U3Ac()
     {
+        U3Abutton.SetActive(false);
+        U3Bbutton.SetActive(false);
+        U3Cbutton.SetActive(false);
+        text67.enabled = true;
         yield return null;
 
         while (!Input.GetMouseButtonDown(0))
             yield return null;
+
+        text67.enabled = false;
+        text68.enabled = true;
+        yield return null;
+
+        while (!Input.GetMouseButtonDown(0))
+            yield return null;
+
+        text68.enabled = false;
+        text69.enabled = true;
+        yield return null;
+
+        while (!Input.GetMouseButtonDown(0))
+            yield return null;
+
+        text70.enabled = false;
+        Debug.Log("End Dating Sim");
     }
     public IEnumerator U3Bc()
     {
+        U3Abutton.SetActive(false);
+        U3Bbutton.SetActive(false);
+        U3Cbutton.SetActive(false);
+        text71.enabled = true;
         yield return null;
 
         while (!Input.GetMouseButtonDown(0))
             yield return null;
+
+        text71.enabled = false;
+        text72.enabled = true;
+        yield return null;
+
+        while (!Input.GetMouseButtonDown(0))
+            yield return null;
+
+        text72.enabled = false;
+        text73.enabled = true;
+        yield return null;
+
+        while (!Input.GetMouseButtonDown(0))
+            yield return null;
+
+        text73.enabled = false;
+        Debug.Log("End Dating Sim");
     }
     public IEnumerator U3Cc()
     {
+        U3Abutton.SetActive(false);
+        U3Bbutton.SetActive(false);
+        U3Cbutton.SetActive(false);
+        text74.enabled = true;
         yield return null;
 
         while (!Input.GetMouseButtonDown(0))
             yield return null;
+
+        text74.enabled = false;
+        text75.enabled = true;
+        yield return null;
+
+        while (!Input.GetMouseButtonDown(0))
+            yield return null;
+
+        text75.enabled = false;
+        text76.enabled = true;
+        yield return null;
+
+        while (!Input.GetMouseButtonDown(0))
+            yield return null;
+
+        text76.enabled = false;
+        text77.enabled = true;
+        yield return null;
+
+        while (!Input.GetMouseButtonDown(0))
+            yield return null;
+
+        text77.enabled = false;
+        text78.enabled = true;
+        yield return null;
+
+        while (!Input.GetMouseButtonDown(0))
+            yield return null;
+
+        text78.enabled = false;
+        text79.enabled = true;
+        yield return null;
+
+        while (!Input.GetMouseButtonDown(0))
+            yield return null;
+
+        text79.enabled = false;
+        text80.enabled = true;
+        yield return null;
+
+        while (!Input.GetMouseButtonDown(0))
+            yield return null;
+
+        text80.enabled = false;
+        Debug.Log("you won tha Dating Sim");
     }
 
     public void startFalse()
@@ -784,7 +1000,7 @@ public class Dating : MonoBehaviour
         text46.enabled = false;
         text47.enabled = false;
         text48.enabled = false;
-        text49.enabled = false;/*
+        text49.enabled = false;
         text50.enabled = false;
         text51.enabled = false;
         text52.enabled = false;
@@ -816,11 +1032,5 @@ public class Dating : MonoBehaviour
         text78.enabled = false;
         text79.enabled = false;
         text80.enabled = false;
-        text81.enabled = false;
-        text82.enabled = false;
-        text83.enabled = false;
-        text84.enabled = false;
-        text85.enabled = false;
-        text86.enabled = false;*/
     }
 }
