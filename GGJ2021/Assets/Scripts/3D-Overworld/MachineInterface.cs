@@ -10,7 +10,12 @@ public class MachineInterface : MonoBehaviour
     public Text outOfOrder;
     public Text interText;
 
-    public GameObject player, cutSceneCam;
+    public GameObject player, cutSceneCam, scoreKeep;
+
+    private void Start()
+    {
+        scoreKeep.GetComponent<ScoreKeep>().KeepPos(transform.position, transform.rotation);
+    }
 
     public void Update()
     {
