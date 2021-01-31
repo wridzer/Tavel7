@@ -12974,7 +12974,7 @@ MonoBehaviour:
   interText: {fileID: 1679558355}
   player: {fileID: 1335086615}
   cutSceneCam: {fileID: 1601557983}
-  scoreKeep: {fileID: 0}
+  scoreKeep: {fileID: 1080658197}
 --- !u!1 &2005451813
 GameObject:
   m_ObjectHideFlags: 0

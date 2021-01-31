@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class StartScreen : MonoBehaviour
 {
+    public GameObject scoreKeep;
+
     public void Play()
     {
-        SceneManager.LoadScene("3DWorld");
+        scoreKeep.GetComponent<ScoreKeep>().KeepPos(new Vector3(-0.79f, 2.09f, -7.16f), new Quaternion(0,0,0,0));
+        SceneManager.LoadScene(1);
     }
     
     public void Quit()

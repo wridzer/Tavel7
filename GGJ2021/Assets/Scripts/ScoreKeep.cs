@@ -14,9 +14,12 @@ public class ScoreKeep : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        player.transform.position = lastPos;
-        player.transform.rotation = lastRot;
+        if(SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            player.transform.position = lastPos;
+            player.transform.rotation = lastRot;
+        }
     }
 
     // Update is called once per frame
