@@ -142,6 +142,7 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Respawn")
         {
             scoreKeep.GetComponent<ScoreKeep>().KeepPos(new Vector3(78.3f, 1.1f, -11.95f), new Quaternion(0, 0, 0, 0));
+            SceneManager.LoadScene(7);
         }
     }
 }
