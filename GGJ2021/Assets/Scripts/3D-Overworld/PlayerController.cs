@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     public float clampMin = -15;
     public float clampMax = 10;
 
+    public GameObject scoreKeep;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -136,6 +138,10 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Machine")
         {
             other.GetComponentInParent<MachineInterface>().enabled = true;
+        }
+        if (other.tag == "Respawn")
+        {
+            scoreKeep.GetComponent<ScoreKeep>().KeepPos(new Vector3(78.3f, 1.1f, -11.95f), new Quaternion(0, 0, 0, 0));
         }
     }
 }

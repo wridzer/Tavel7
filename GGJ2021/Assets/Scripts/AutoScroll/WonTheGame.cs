@@ -11,7 +11,6 @@ public class WonTheGame : MonoBehaviour
     {
         if (collider.tag == "Player") 
         {
-            print("Je ruikt naar natte hond, kun je alsjeblieft ergens anders zitten?");
             scoreKeep.GetComponent<ScoreKeep>().Platform();
             SceneManager.LoadScene(1);
         }
