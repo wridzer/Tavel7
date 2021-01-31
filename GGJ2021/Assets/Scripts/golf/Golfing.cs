@@ -19,6 +19,9 @@ public class Golfing : MonoBehaviour
     [SerializeField]
     int GolfPower;
 
+    [SerializeField]
+    public int Hits;
+
 
     private void OnMouseDown()
     {
@@ -36,6 +39,7 @@ public class Golfing : MonoBehaviour
             distanceY = Mouse.transform.position.y - this.gameObject.transform.position.y ;
 
             rb2D.AddForce(new Vector2(Mathf.Clamp(distanceX,-4,4) * GolfPower,Mathf.Clamp(distanceY,-4,4) * GolfPower));
+            Hits++;
         }
         GolfHitCheck = false; 
     }
