@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
     public GameObject enim, scoreKeep;
 
     public AudioSource audioS;
-    public AudioClip winSF, loseSF, deathSF;
+    public AudioSource musicS;
+    public AudioClip winSF, loseSF, deathSF, musicMF;
 
     public Text scoreT;
 
