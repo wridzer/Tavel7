@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ScoreKeep : MonoBehaviour
 {
 
-    static public int golf = 0, bump = 0, race = 0, fish = 0, date = 0, platform = 0, pet = 0;
+    static public int golf = 0, bump = 0, race = 0, fish = 0, date = 0, platform = 0;
 
     static public Vector3 lastPos;
     static public Quaternion lastRot;
@@ -52,10 +52,6 @@ public class ScoreKeep : MonoBehaviour
     public void Platform()
     {
         platform++; 
-    }
-    public void Pet()
-    {
-        pet++; 
     }
     public void KeepPos(Vector3 Pos, Quaternion Rot)
     {
