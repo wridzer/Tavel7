@@ -10,14 +10,20 @@ public class MovementFish : MonoBehaviour
     private Vector3 scaleChange;
 
     public FishHangle fishH;
+    public GameObject wayPoi;
+    public Vector3 playerLoc;
+
+    private bool caught;
 
     private void Start()
     {
         target = CP2;
+        caught = false;
     }
 
     void Update()
     {
+        playerLoc = new Vector3(transform.position.x, wayPoi.transform.position.y, transform.position.z);
         float step = SPEED * Time.deltaTime;
 
         if(target == CP1 || target == CP2)
@@ -25,6 +31,11 @@ public class MovementFish : MonoBehaviour
 
         else if (target == fishH.gameObject)
             transform.position = target.transform.position;
+
+        if(caught == true)
+        {
+            OnHangle();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -45,12 +56,15 @@ public class MovementFish : MonoBehaviour
             newScale.x *= -1;
             gameObject.transform.localScale = newScale;
         }
-            
-
 
         if (collision.gameObject.tag == "FishHangel" && fishH.hasFish == false && fishH.hasBadFish == false)
         {
-            target = collision.gameObject;
+            caught = true;
         }
+    }
+
+    public void OnHangle()
+    {
+        transform.position = playerLoc;
     }
 }

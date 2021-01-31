@@ -19,13 +19,16 @@ public class FishHangle : MonoBehaviour
     public int fishPoints;
 
     private GameObject fish;
-    public GameObject line;
+    public GameObject line, scoreKeep;
 
     public Text fishScore;
     public Text gameOverText;
     public Text youWinText;
 
     public int speed = 12;
+
+    public AudioSource audioS;
+    public AudioClip winSF, loseSF;
 
     private void Start()
     {
@@ -52,9 +55,8 @@ public class FishHangle : MonoBehaviour
 
         fishScore.text = fishPoints.ToString();
         if (fishPoints >= 3)
-        {//win condition
-            youWinText.enabled = true;
-            //geluid
+        {
+            StartCoroutine(WinCond());
         }
     }
 
@@ -74,13 +76,13 @@ public class FishHangle : MonoBehaviour
         if (collision.gameObject.tag == "FishBucket" && hasFish == true)
         {
             hasFish = false;
-            Destroy(fish);
+            fish.SetActive(false);
             fishPoints++;
         }
         if (collision.gameObject.tag == "FishBucket" && hasBadFish == true)
         {
             hasBadFish = false;
-            Destroy(fish);
+            fish.SetActive(false);
             fishPoints--;
             if(fishPoints == -1)
             {
@@ -98,5 +100,13 @@ public class FishHangle : MonoBehaviour
         gameOverText.enabled = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene("Fishing");
+    }
+
+    public IEnumerator WinCond()
+    {
+        audioS.PlayOneShot(winSF);
+        yield return new WaitForSeconds(1);
+        scoreKeep.GetComponent<ScoreKeep>().Fish();
+        SceneManager.LoadScene(7);
     }
 }
