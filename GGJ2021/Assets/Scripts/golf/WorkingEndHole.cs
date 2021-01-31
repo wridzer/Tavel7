@@ -6,16 +6,30 @@ using UnityEngine.SceneManagement;
 public class WorkingEndHole : MonoBehaviour
 {
     public GameObject scoreKeep;
-    public GameObject HoleInOneText;
+    public GameObject HoleInOneText, goodJobText, noobText;
     public Golfing golf;
     public GameObject Player;
     public Rigidbody2D rb2D;
+    public AudioSource audioS;
+    public AudioClip holeInOne, win, loser;
+    public int par;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (golf.Hits == 1)
         {
             HoleInOneText.GetComponent<SpriteRenderer>().enabled = true;
+            audioS.PlayOneShot(holeInOne);
+        }
+        else if (golf.Hits <= par)
+        {
+            goodJobText.GetComponent<SpriteRenderer>().enabled = true;
+            audioS.PlayOneShot(win);
+        }
+        else
+        {
+            noobText.GetComponent<SpriteRenderer>().enabled = true;
+            audioS.PlayOneShot(loser);
         }
         if (rb2D.velocity.magnitude < 3)
         {
