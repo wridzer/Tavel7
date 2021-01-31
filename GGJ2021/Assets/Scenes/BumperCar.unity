@@ -241,7 +241,8 @@ MonoBehaviour:
   turnSpeed: 2000
   hitPower: 25
   audioS: {fileID: 178167499}
-  hitSF: {fileID: 0}
+  hitSF: {fileID: 8300000, guid: 6f10b03d79175ae4bb3e7b914e7dc454, type: 3}
+  deathSF: {fileID: 8300000, guid: 38b2ac79ab6861d4cac2d94af38d77f7, type: 3}
 --- !u!61 &178167498
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -733,6 +734,49 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1233006893
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1233006895}
+  - component: {fileID: 1233006894}
+  m_Layer: 0
+  m_Name: ScoreKeep
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1233006894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233006893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a8fd82779226e14fada63e2ccaa67be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1233006895
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233006893}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 84.28023, y: 12.223156, z: 2.9807673}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1238252765
 GameObject:
@@ -1334,10 +1378,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enim: {fileID: 6391493062673429232, guid: 821cae66095c08940976b8fc58c3b290, type: 3}
+  scoreKeep: {fileID: 1233006893}
   audioS: {fileID: 1757437890}
-  winSF: {fileID: 0}
-  loseSF: {fileID: 0}
-  deathSF: {fileID: 0}
+  winSF: {fileID: 8300000, guid: c15b26775a8af134eb870e5119bc94a6, type: 3}
+  loseSF: {fileID: 8300000, guid: 15ecd1f167b052f40bf6b016b83a8fd8, type: 3}
+  deathSF: {fileID: 8300000, guid: 38b2ac79ab6861d4cac2d94af38d77f7, type: 3}
   scoreT: {fileID: 1238252767}
 --- !u!82 &1757437890
 AudioSource:

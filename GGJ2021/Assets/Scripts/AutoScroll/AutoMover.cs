@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AutoMover : MonoBehaviour
 {
+    public AudioSource audioS;
+    public AudioClip jumpSF;
     public Rigidbody2D Rb2D;
     public GroundCheck GroundCheck;
 
@@ -15,6 +17,6 @@ public class AutoMover : MonoBehaviour
     void Update()
     {
        Rb2D.velocity = new Vector3(HSpeed, Rb2D.velocity.y, 0);
-       if (GroundCheck.OnGround == true && (Input.GetKeyDown("space") || Input.GetKeyDown("w"))) { Rb2D.AddForce(new Vector3(0, JSpeed, 0)); }
+       if (GroundCheck.OnGround == true && (Input.GetKeyDown("space") || Input.GetKeyDown("w"))) { Rb2D.AddForce(new Vector3(0, JSpeed, 0)); audioS.PlayOneShot(jumpSF); }
     }
 }
