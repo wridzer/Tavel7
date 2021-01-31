@@ -25,7 +25,10 @@ public class MenuEsc : MonoBehaviour
     public void Resume()
     {
         Menu.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
+        if (SceneManager.GetActiveScene().buildIndex != 6 && SceneManager.GetActiveScene().buildIndex != 8)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
         Time.timeScale = 1;
     }
 
