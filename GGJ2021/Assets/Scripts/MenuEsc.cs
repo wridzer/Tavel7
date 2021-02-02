@@ -19,6 +19,7 @@ public class MenuEsc : MonoBehaviour
             Menu.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0;
+            Cursor.visible = true;
         }
     }
 
@@ -28,6 +29,7 @@ public class MenuEsc : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex != 6 && SceneManager.GetActiveScene().buildIndex != 8)
         {
             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
         Time.timeScale = 1;
     }
@@ -37,10 +39,12 @@ public class MenuEsc : MonoBehaviour
         if(SceneManager.GetActiveScene().buildIndex != 1 && SceneManager.GetActiveScene().buildIndex != 4)
         {
             SceneManager.LoadScene(7);
+            Cursor.visible = false;
         }
         if(SceneManager.GetActiveScene().buildIndex == 1 || SceneManager.GetActiveScene().buildIndex == 4)
         {
             SceneManager.LoadScene(1);
+            Cursor.visible = false;
         }
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
